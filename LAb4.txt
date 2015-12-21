@@ -1,0 +1,56 @@
+package data;
+
+import util.Database;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public final class PostgresDatabase implements Database {
+
+	private Connection connection = null;
+
+	
+	@Override
+	public void open() {
+
+		final String JDBC_DRIVER = "org.postgresql.Driver";
+		final String JDBC_URL = "jdbc:postgresql://145.97.16.194:5432/LeenMeij";
+		final String JDBC_USERNAME = "postgres";
+		final String JDBC_PASSWORD = "RbhbkkFrfnjd7818Mon56naf6";
+
+		try {
+			Class.forName(JDBC_DRIVER);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		try {
+			connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	@Override
+	public void close() {
+
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	@Override
+	public Connection getConnection() {
+
+		if (connection == null) {
+
+			open();
+		}
+		return connection;
+	}
+}
