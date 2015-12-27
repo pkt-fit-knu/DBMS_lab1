@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Canvas Forest</title>
+        <meta charset='utf-8' />
+	</head>
+	<body>
+		<canvas  id='example'></canvas>
+		<script>
+		var example = document.getElementById("example"),
+			    ctx     = example.getContext('2d');
+				 
+			example.height = 5000;
+			example.width  = 5000;
+
+
+function tree_1(){ 
+var scalex; 
+var scaley; 
+var translatex; 
+var translatey; 
+
+
+
+function read_info(scalex, scaley, translatex, translatey, colorleaves, colorbark, flip){ 
+this.sx = scalex; 
+this.sy = scaley; 
+this.tx = translatex; 
+this.ty = translatey; 
+
+} 
+
+
+function new_tree_1(){ 
+
+			
+			ctx.scale(this.sx/2,this.sy/2);
+			
+			ctx.fillStyle='#8CC63F';
+			ctx.fill();
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.strokeStyle='#A27729';
+			ctx.moveTo(150+this.tx, 400+this.ty);
+			ctx.lineTo(150+this.tx, 450+this.ty);
+			ctx.lineTo(240+this.tx, 450+this.ty);
+			ctx.lineTo(250+this.tx, 400+this.ty);
+			
+			
+          ctx.fillStyle='#A27729';
+			ctx.fill();
+			ctx.stroke();
+			ctx.beginPath();
+			ctx.strokeStyle='#8CC63F';
+		  ctx.moveTo(5+this.tx, 400+this.ty);
+			ctx.lineTo(100+this.tx, 250+this.ty);
+			ctx.lineTo(50+this.tx, 250+this.ty);
+			ctx.lineTo(150+this.tx,150+this.ty);
+			ctx.lineTo(100+this.tx,150+this.ty);
+			ctx.lineTo(200+this.tx,50+this.ty);
+			ctx.lineTo(300+this.tx,150+this.ty);
+			ctx.lineTo(250+this.tx,150+this.ty);
+			ctx.lineTo(350+this.tx,250+this.ty);
+			ctx.lineTo(300+this.tx,250+this.ty);
+			ctx.lineTo(395+this.tx,400+this.ty);
+			ctx.fillStyle='#8CC63F';
+			ctx.fill();
+			ctx.stroke();
+          
+
+} 
+
+return{read: read_info, print_tree : new_tree_1}; 
+
+
+
+} 
+function getRand(min, max){
+  return Math.random() * (max - min) + min;
+}
+var t = [];
+for(var i = 0; i<5;i++){
+var a = getRand(1,3);
+var b = getRand(1,3);
+var c = getRand(0,700);
+var d = getRand(0,700);
+t[i]= tree_1();
+t[i].read(a,b,c,d); 
+t[i].print_tree(); 
+}
+ 
+
+</script> 
+</body> 
+</html>

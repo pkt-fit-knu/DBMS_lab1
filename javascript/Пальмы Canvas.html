@@ -1,0 +1,82 @@
+	
+<!doctype html> 
+<html> 
+<head> 
+<meta charset="windows-1251"> 
+<title> </title> 
+<style> 
+#zone{ 
+border:#000 1px solid; 
+} 
+#img_1{} 
+.circle{ 
+width:500px; height:500px; background:#000; position:absolute; left:1px; border-radius: 50%; opacity: 0.5; 
+} 
+</style> 
+
+
+</head> 
+
+<body id="body"> 
+
+<div id="img"></div> 
+<script type="text/javascript"> 
+var all ="<svg x ='0' y='0' width='10000' viewBox='0 0 10000 10000'>"; 
+
+function tree_1(){ 
+var scalex; 
+var scaley; 
+var translatex; 
+var translatey; 
+var colorleaves; 
+var colorbark; 
+
+
+function read_info(scalex, scaley, translatex, translatey, colorleaves, colorbark, flip){ 
+this.sx = scalex; 
+this.sy = scaley; 
+this.tx = translatex; 
+this.ty = translatey; 
+this.cl = colorleaves; 
+this.cb = colorbark; 
+} 
+
+function new_tree_1(){ 
+
+all +=" <style type = 'text/css'>"; 
+all +=" #leaves{fill:" + this.cl + "}"; 
+all +=" #bark{fill:" + this.cb + "}"; 
+all +="</style>"; 
+
+all += " <g id='tree_1' transform='scale("+this.sx+", "+this.sy+") translate("+this.tx+", "+this.ty+") '>"; 
+all += " <path style='fill:"+this.cb+ "' id='bark' d='M125,500 L125,425 150,450 125,400 150,400 125,350 150,350 125,300 150,300 125,250 200,225 200,275 225,275 200,325 225,325 200,400 225,375 200,450 225,450 200,500'/>"; 
+all += " <path  style='fill:"+this.cl+ "'id='leaves' d='M150,150 C  75,125 25,200  50,300 M150,150 C 125,75 25,75 5,200 M150,150 C 100,50 200,50 225,150 M150,150 C 175,50 275,50 350,150 M150,150 C 250,125 325,150 350,200 M150,150 C 250,150 300,200 325,275 M150,150 C 225,300 250,250 325,275 M150,150 C 100,175 100,200 175,325 M150,150 C 200,200 200,275 175,325 '/>"; 
+
+all +="<g id='leaves'>"; 
+
+document.getElementById("img").innerHTML = all; 
+
+} 
+
+return{read: read_info, print_tree : new_tree_1}; 
+
+
+
+} 
+var t = new tree_1(); 
+
+t.read(1,1,5,10,"#8CC63F","#A27729"); 
+t.print_tree(); 
+var k = new tree_1(); 
+k.read(1,1,150,10,"green","brown"); 
+k.print_tree(); 
+var o = new tree_1(); 
+o.read(1,1,100,10,"#8CC63F","#A27729"); 
+o.print_tree();
+
+
+//scalex, scaley, translatex, translatey, colorleaves, colorbark 
+
+</script> 
+</body> 
+</html>

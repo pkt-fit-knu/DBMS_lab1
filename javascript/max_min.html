@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script>
+
+  var arr = [1, 0, -1, -5, 2, -3, 4, 11, -18],
+      fMax,
+      fMin;
+function main (x) {
+  function getMax(arr) {
+    var arrl = arr.length,
+        maxEl = arr[0];
+    for (var i = 0; i < arrl; i++) {
+      if (maxEl > arr[i]) {
+        maxEl = arr[i];
+      }
+    }
+    return maxEl;
+  }
+  function getMin(arr) {
+    var arrl = arr.length,
+        minEl = arr[0];
+    for (var i = 0; i < arrl; i++) {
+      if (minEl > arr[i]) {
+        minEl = arr[i];
+      }
+    }
+    return minEl;
+  }
+  
+ if (x==1) 
+  return getMax; 
+else { 
+return getMin; 
+} 
+} 
+  
+
+
+  var z=main(1);
+  console.log(z(arr)); 
+ 
+ 
+  </script>
+</body>
+</html>

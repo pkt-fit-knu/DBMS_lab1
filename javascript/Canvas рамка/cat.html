@@ -1,0 +1,36 @@
+<!doctype html> 
+<html>
+<meta charset='utf-8'>
+<head>
+<title>imgExample</title>
+<style>
+#example { 
+width:500px;
+height:300px;
+
+}
+
+
+</style>
+</head>
+<body>
+
+<canvas id='example'>Обновите браузер</canvas>
+<script>
+var example = document.getElementById("example"),
+ctx = example.getContext('2d'), 
+pic = new Image(); 
+pic1 = new Image(); 
+pic1.src = '1.jpg';
+pic.src = '2.jpg';
+pic.onload = function() { 
+
+ctx.drawImage(pic1, 0, 0, 300, 160);
+ctx.drawImage(pic, 75, 25, 150, 75); 
+ctx.font = "15px Arial";
+ctx.fillText("Cat",120,120);
+}
+</script>
+</body>
+</html>
+
