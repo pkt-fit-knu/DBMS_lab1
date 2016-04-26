@@ -1,0 +1,9 @@
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\bin\Debug\HistogramRGB.exe.config
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\bin\Debug\HistogramRGB.exe
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\bin\Debug\HistogramRGB.pdb
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\obj\Debug\HistogramRGB.csprojResolveAssemblyReference.cache
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\obj\Debug\HistogramRGB.Form1.resources
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\obj\Debug\HistogramRGB.Properties.Resources.resources
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\obj\Debug\HistogramRGB.csproj.GenerateResource.Cache
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\obj\Debug\HistogramRGB.exe
+E:\Projects\C#\WF\HistogramRGB\HistogramRGB\obj\Debug\HistogramRGB.pdb
